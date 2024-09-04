@@ -75,7 +75,7 @@
 body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     line-height:1.2;
-    min-width:580px;
+    min-width:630px;
     background-color: var(--background-color);
     color: var(--text-color);
     transition: background-color 1s ease, color 1s ease;
