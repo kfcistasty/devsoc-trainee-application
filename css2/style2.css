@@ -1,0 +1,355 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+
+:root {
+    --background1-image: url(../images/background.jpg);
+    --background2-image: url(../images/background2.jpg);
+    --background-color: #474a77;
+    --text-color: black;
+    --box-background: #f5a076;
+    --header-text: #f5a076;
+    --navbar-text: white;
+    --navbar-themes-background-color:#474a77;
+    --gradient-transition: gradientChange1;
+    --section2-h1: #f5a076;
+}
+
+[data-theme="discord"] {
+    --background1-image: url(../images/discord1.jpg);
+    --background2-image: url(../images/discord2.jpg);
+    --background-color: #000000;
+    --text-color: white;
+    --box-background: #333333;
+    --header-text: #ffffff; 
+    --navbar-text: #E0E0E0;
+    --navbar-themes-background-color:black;
+    --gradient-transition: gradientChange2;
+    --section2-h1: white;
+}
+
+@keyframes gradientChange1 {
+    0% {
+        background-color: #f5a65a; /* Starting color - warm orange */
+    }
+    25% {
+        background-color: #f8b079; /* Soft golden yellow */
+    }
+    50% {
+        background-color: #fca594; /* Light peachy orange */
+    }
+    75% {
+        background-color: #f5a076; /* Rich sunset orange */
+    }
+    100% {
+        background-color: #f5a65a; /* Back to the original warm orange */
+    }
+}
+
+@keyframes gradientChange2 {
+    0% {
+        background-color: #ff4500; /* Orange-Red */
+    }
+    16% {
+        background-color: #ff6347; /* Tomato */
+    }
+    33% {
+        background-color: #32cd32; /* Lime Green */
+    }
+    50% {
+        background-color: #1e90ff; /* Dodger Blue */
+    }
+    66% {
+        background-color: #4b0082; /* Indigo */
+    }
+    83% {
+        background-color: #9400d3; /* Dark Violet */
+    }
+    100% {
+        background-color: #ff4500; /* Back to Orange-Red */
+    }
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height:1.2;
+    min-width:600px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 1s ease, color 1s ease;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.box {
+    padding: 30px; 
+    border-radius: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin: 20px 10px;
+    flex: 1;
+    animation: var(--gradient-transition) 10s ease infinite;
+    background-color: var(--box-background);
+    transition: background-color 1s ease;
+}
+
+.header {
+    padding:20px;
+    background-image: var(--background1-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    min-height:1000px;
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-image 1s ease
+}
+
+.section1 {
+    padding:30px;
+    padding-bottom: 25px;
+    background-image: var(--background2-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    min-height:1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    transition: background-image 1s ease;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 0px;
+    padding-bottom: 20px;
+    width:100%;
+}
+
+.boxes {
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-between; 
+    gap: 10px;
+    width: 100%; /
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    min-width: 700px;
+}
+
+.button {
+    width:80px;
+    height:80px;
+    object-fit:contain;
+}
+
+.scratch-game {
+    margin:20px 10px;
+}
+
+.button:hover {
+    width:90px;
+    height:90px;
+    object-fit:contain;
+}
+
+.header h1 {
+    font-size:clamp(100px, 10vw, 150px);
+    color: var(--header-text);
+    font-weight: bolder;
+    transition: color 1s ease;
+}
+
+.header h2 {
+    font-size:clamp(80px, 10vw, 120px);
+    color: black;
+}
+
+.header h3 {
+    font-size:38px;
+    font-weight:200;
+}
+
+.header .box {
+    background-color: #f5a076; 
+    padding: 10px; 
+    border-radius: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    display: inline-block; 
+    margin-top: 20px;
+    height:80px;
+}
+
+.navbar .container-main {
+    color:#fff;
+    height:40px;
+    padding-right: 20px;
+    animation: var(--gradient-transition) 10s ease infinite;
+}
+
+.navbar .container-themes {
+    color:#fff;
+    height:40px;
+    background-color: var(--navbar-themes-background-color);
+}
+
+.navbar .container-themes, .navbar .container-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left:30px;
+}
+
+.navbar a {
+    color: var(--navbar-text);
+    text-decoration: none;
+    font-size: 28px;
+    transition: color 0.3s ease, box-shadow 0.6s ease;
+}
+
+.navbar a:hover { 
+    text-shadow: 0 0 15px rgba(255, 209, 169, 0.7), 
+                0 0 30px rgba(255, 209, 169, 0.5), 
+                0 0 45px rgba(255, 209, 169, 0.3);
+}
+
+.section1 .boxes {
+    display:flex;
+    justify-content: space-between;
+}
+
+.links ul {
+    display:flex;
+    justify-content: space-around;
+
+}
+
+.box h2 {
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.box h3 {
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.box p {
+    font-size: 30px;
+    font-weight: 100;
+    display: flex;
+    justify-content: left;
+    line-height: 40px;
+}
+
+.section2 h1 {
+    font-size: 80px;
+    color:var(--section2-h1);
+    transition: transition 1s ease;
+}
+
+.section2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: top; 
+    align-items: center;
+    padding: 0px 30px;
+}
+
+.section2 .boxes {
+    display: flex;
+}
+
+.section2 .container img {
+    width:180px;
+    height:165px;
+    object-fit:contain;
+}
+
+.section2 .hobbies {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.scratch-game .box {
+    margin: 20px 0px;
+    margin-bottom: 0px;
+}
+
+.scratch-game .box {
+    display:flex;
+    justify-content: space-around;
+}
+.scratch-game img {
+    width:180px;
+    height:165px;
+    object-fit:contain;
+}
+
+.scratch-game h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.scratch-game h4 {
+    font-size: 24px;
+    line-height: 40px;
+}
+
+.favourite-project {
+    margin-top: 0;
+}
+
+.hobby-heading {
+    display: flex;
+    justify-content: center;
+}
+
+#name-box {
+    display: flex;
+    flex:1;
+    justify-content: center;
+    background-color: #f5a076; 
+    padding: 10px; 
+    border-radius: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin: 90px 10px;
+    width: 80%;
+    max-height:70px;
+    animation: var(--gradient-transition) 10s ease infinite;
+}
+
+
+
+@media (max-width: 840px) {
+    .container {
+        flex-direction: column; /* Switch to column direction when viewport width is 768px or less */
+    }
+
+    .boxes {
+        flex-direction: column;
+    }
+}
+

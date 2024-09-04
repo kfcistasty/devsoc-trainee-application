@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natalie's profile pg</title>
+    <link rel="stylesheet" href="css2/style2.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container-themes">
+            <ul class="themes">
+                <li>
+                    <a href="#" id="harmony-theme">Harmony</a>
+                </li>
+                <li>
+                    <a href="#" id="discord-theme">Discord</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="container-main">
+            <ul class="nav">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#about">About Me</a>
+                </li>
+                <li>
+                    <a href="#links">Links</a>
+                </li>
+                <li>
+                    <a href="#games">Games</a>
+                </li>
+                <li>
+                    <a href="#hobbies">Hobbies</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="container">
+            <h2>Welcome to</h2>
+            <h1>My profile</h1>
+        </div>
+        <div id="name-box">
+            <h3>Hello, I'm Natalie</h3>
+        </div>
+    </header>
+
+    <section id="about" class="section1">
+        <div class="boxes">
+            <div class="box about-me">
+                <h2>About Me</h2>
+
+                <ul>
+                    <li>
+                        <h3>Name: Natalie Chen</h3>
+                    </li>
+                    <li>
+                        <h3>Age: 18</h3>
+                    </li>
+                    <li>
+                        <h3>Degree: Adv Comp Sci (Honours)</h3>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="links" class="box links">
+                <h2>Links</h2>
+                <ul>
+                    <li>
+                        <a href="https://scratch.mit.edu/users/yummyinmytumtum/"><img src="images/scratch.png" alt="Scratch" class="button"></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/kfcistasty"><img src="images/github.png" alt="Github" class="button"></a>
+                    </li>
+                    <li>
+                        <a href="mailto:natalie.chen4278@gmail.com" ><img src="images/mail.png" alt="Email" class="button"></a>
+                    </li>
+                    <li>
+                        <a href="https://discord.com/users/622351067975385138" ><img src="images/discord.png" alt="Discord" class="button"></a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div id="games" class="boxes">
+            <div class="scratch-game">
+                <iframe src="https://scratch.mit.edu/projects/178989207/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                <div class="box">
+                    <div>
+                        <h3>Controls</h3>
+                        <ul>
+                            <li>
+                                <h4>Arrow Keys: Move</h4>
+                            </li>
+                            <li>
+                                <h4>A or D: Rotate</h4>
+                            </li>
+                            <li>
+                                <h4>Space: Shoot</h4>
+                            </li>
+                        </ul> 
+                    </div>
+                    
+                    <div>
+                        <img src="images/shark.gif" alt="shark gif">
+                    </div>
+                </div>
+            </div>
+
+            <div class="box first-project">
+                <div>
+                    <h2>First Project</h2>
+                    <p>My very first project was a mini scratch game called “run
+                    from the sharks”. Here, the player controls a little fish
+                    with the ability to shoot witches at sharks (occasionally).
+                    Despite its many bugs, the game introduced me to loops,
+                    conditionals, and event handling. It ignited my passion for coding, 
+                    ultimately leading me to pursue
+                    computer science.</p>
+                </div>
+               
+                <div>
+                    <img src="images/fish1.gif" alt="fish gif">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section2">
+        <div class="boxes">
+            <div class="scratch-game favourite-project">
+                <iframe src="https://scratch.mit.edu/projects/542658822/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+            </div>
+
+            <div class="box favourite-project">
+                <h2>Favourite Project</h2>
+                <p>I made “Mix and Match” after rediscovering Scratch in yr 10. It's a mix
+                 of food, music and games, basically whatever I liked or found cute.
+                Here, I learned to incorporate other elements such as sound,
+                transitions and visual effects. And most importantly,
+                it’s bug free! (as far as I know)</p>
+            </div>
+        </div>
+
+        <div id="hobbies" class="container">
+            <h1 class="hobby-heading">Hobbies</h1>
+            <div class="boxes">
+                <div class="box hobbies">
+                    <h2>Crocheting</h2>
+                    <img src="images/yarn.gif" alt="yarn ball">
+                </div>
+
+                <div class="box hobbies">
+                    <h2>Loz Blocks</h2>
+                    <img src="images/lego.gif" alt="blocks">
+                </div>
+
+                <div class="box hobbies">
+                    <h2>Baking</h2>
+                    <img src="images/baking2.gif" alt="baking">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const harmonyLink = document.getElementById('harmony-theme');
+        const discordLink = document.getElementById('discord-theme');
+        
+        document.body.setAttribute('data-theme', 'harmony');
+        
+        harmonyLink.addEventListener('click', () => {
+            event.preventDefault();
+            document.body.setAttribute('data-theme', 'harmony');
+        });
+
+        discordLink.addEventListener('click', () => {
+            event.preventDefault();
+            document.body.setAttribute('data-theme', 'discord');
+        });
+    });
+</script>
