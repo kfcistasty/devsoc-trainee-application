@@ -6,6 +6,7 @@
     <title>Natalie's profile pg</title>
     <link rel="stylesheet" href="assets/css2/style2.css">
 </head>
+
 <body>
     <nav class="navbar">
         <div class="container-themes">
@@ -39,6 +40,11 @@
             </ul>
         </div>
     </nav>
+
+    <div id="music-container">
+        <img id="music-toggle" src="assets/images/stillCat.png" alt="Play Music">
+        <audio id="audio" src="assets/images/Mr. Bean Cartoon Intro Theme  1 Hour.mp3"></audio>
+    </div>
 
     <header class="header">
         <div class="container">
@@ -140,7 +146,7 @@
 
             <div class="box favourite-project">
                 <h2>Favourite Project</h2>
-                <p>I made “Mix and Match” after rediscovering Scratch in yr 10. It's a mix
+                <p>I made “Mix and Match” after rediscovering Scratch in yr 10 (2021). It's a mix
                  of food, music and games, basically whatever I liked or found cute.
                 Here, I learned to incorporate other elements such as sound,
                 transitions and visual effects. And most importantly,
@@ -169,12 +175,23 @@
         </div>
     </section>
 </body>
+
+<footer>
+    <div class="footer">
+        <p>I incorporated the themes by letting users toggle between a warm sunset look (harmony)
+             and a stark neon palette (discord). For me, harmony is warm with golden hues, while discord
+              is a sad grey with vibrant colours.
+        </p>
+    </div>
+</footer>
 </html>
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const harmonyLink = document.getElementById('harmony-theme');
         const discordLink = document.getElementById('discord-theme');
+        const musicToggle = document.getElementById('music-toggle');
+        const audio = document.getElementById('audio');
         
         document.body.setAttribute('data-theme', 'harmony');
         
@@ -186,6 +203,16 @@
         discordLink.addEventListener('click', () => {
             event.preventDefault();
             document.body.setAttribute('data-theme', 'discord');
+        });
+
+        musicToggle.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                musicToggle.src = 'assets/images/pinaoCat.gif'; 
+            } else {
+                audio.pause();
+                musicToggle.src = 'assets/images/stillCat.png'; 
+            }
         });
     });
 </script>

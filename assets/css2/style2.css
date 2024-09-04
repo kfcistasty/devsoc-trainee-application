@@ -75,7 +75,7 @@
 body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     line-height:1.2;
-    min-width:600px;
+    min-width:580px;
     background-color: var(--background-color);
     color: var(--text-color);
     transition: background-color 1s ease, color 1s ease;
@@ -156,6 +156,16 @@ ul {
 
 .scratch-game {
     margin:20px 10px;
+}
+
+footer {
+    background-color: #dddddd; /* Dark background color */
+    color: #000000; /* White text color */
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 .button:hover {
@@ -341,7 +351,20 @@ ul {
     animation: var(--gradient-transition) 10s ease infinite;
 }
 
+#music-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 30px; /* Adjust padding as needed */
+    z-index: 1000;
+}
 
+#music-toggle {
+    width: 200px; /* Adjust size as needed */
+    height: 200px; /* Adjust size as needed */
+    object-fit: contain;
+    cursor: pointer;
+}
 
 @media (max-width: 840px) {
     .container {
